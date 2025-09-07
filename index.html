@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Professional To-Do List</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+
+    <div class="container">
+        <h1>Professional To-Do List</h1>
+        <div class="add-task-form">
+            <div class="input-container">
+                <input type="text" id="task-input" placeholder="Add a new task..." autofocus>
+                <div class="task-options">
+                    <input type="date" id="due-date-input" title="Due Date">
+                    <select id="priority-select" title="Priority">
+                        <option value="low">Low</option>
+                        <option value="medium">Medium</option>
+                        <option value="high">High</option>
+                    </select>
+                    <input type="text" id="category-input" placeholder="Category" title="Category">
+                </div>
+            </div>
+            <button id="add-task-btn">Add Task</button>
+        </div>
+
+        <div class="controls-container">
+            <div class="filter-container">
+                <input type="text" id="search-input" placeholder="Search tasks...">
+                <button class="filter-btn active" data-filter="all">All</button>
+                <button class="filter-btn" data-filter="pending">Pending</button>
+                <button class="filter-btn" data-filter="completed">Completed</button>
+            </div>
+            
+            <div class="sort-container">
+                <label for="sort-by">Sort by:</label>
+                <select id="sort-by">
+                    <option value="default">Default</option>
+                    <option value="priority">Priority</option>
+                    <option value="dueDate">Due Date</option>
+                </select>
+            </div>
+        </div>
+
+        <div class="task-list-container">
+            <ul id="todo-list">
+                <!-- Tasks will be added here dynamically -->
+            </ul>
+        </div>
+        <div class="progress-bar-container">
+            <div id="progress-bar" class="progress-bar"></div>
+            <span id="progress-text" class="progress-text">0% Complete</span>
+        </div>
+    </div>
+    
+    <div id="message-box" class="message-box"></div>
+
+    <script src="script.js"></script>
+</body>
+</html>
